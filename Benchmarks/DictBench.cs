@@ -1,6 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
-using System;
 
 namespace Benchmarks;
 
@@ -44,4 +42,10 @@ public class DictBench
             dict.TryAdd(i, 0);
         }
     }
+    
+    //Результат сравнения
+    // | Method |     Mean |     Error |    StdDev |
+    // |------- |---------:|----------:|----------:|
+    // | Except | 7.622 ms | 0.1519 ms | 0.4134 ms |
+    // | TryAdd | 3.963 ms | 0.0740 ms | 0.0618 ms |
 }
